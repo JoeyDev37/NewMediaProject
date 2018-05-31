@@ -30,9 +30,8 @@ public class SpeedChangers : MonoBehaviour {
             changeSpeed = slowDownSpeed;
         }
 	}
-	
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "Player")
         {
