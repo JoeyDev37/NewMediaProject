@@ -14,12 +14,20 @@ public class PlayerStats : MonoBehaviour {
     //Under canvas HappinessSlider
     public Slider HappinessSlider;
 
+    public GameObject SpawnArea;
+
 	// Use this for initialization
 	void Start () {
         //happinessSlider = GetComponent<Slider>();
+        ResetPosition();
         playerHappiness = 0;
         HappinessSlider.maxValue = FollowersList.transform.childCount;
 	}
+
+    public void ResetPosition()
+    {
+        gameObject.transform.position = SpawnArea.transform.position;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
