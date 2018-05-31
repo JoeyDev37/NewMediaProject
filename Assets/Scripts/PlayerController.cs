@@ -93,8 +93,8 @@ public class PlayerController : MonoBehaviour
         */
 
 
-        horizontalVelocity = Input.GetAxisRaw("Horizontal");
-        verticalVelocity = Input.GetAxisRaw("Vertical");
+        horizontalVelocity = Input.GetAxis("Horizontal");
+        verticalVelocity = Input.GetAxis("Vertical");
 
         Vector2 moveVector = new Vector2(horizontalVelocity, verticalVelocity) * currentSpeed;
 
