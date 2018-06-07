@@ -18,8 +18,12 @@ public class Follower : MonoBehaviour {
     private Transform player;
     private TextMesh text;
 
+    public AudioSource AudioSource;
+
     void Awake()
     {
+        AudioSource = GetComponent<AudioSource>();
+
         stateMachine = new StateMachine();
         text = transform.gameObject.GetComponentInChildren<TextMesh>();
 
@@ -35,7 +39,6 @@ public class Follower : MonoBehaviour {
 	}
 	
 
-    //TODO Have the followers follow the player
 	// Update is called once per frame
 	void Update ()
     {
@@ -55,6 +58,8 @@ public class Follower : MonoBehaviour {
             if(isFollowerOfPlayer == false) //Checks if the friend is already following the player
             {
                 player = collision.transform;
+
+                AudioSource.Play();
 
                 PlayerStats = collision.gameObject.GetComponent<PlayerStats>();
 

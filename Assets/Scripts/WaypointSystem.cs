@@ -30,11 +30,16 @@ public class WaypointSystem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector2 velocity = CalculateObjectMovement();
+        if(globalWaypoints.Length > 0)
+        {
+            Vector2 velocity = CalculateObjectMovement();
+            transform.Translate(velocity);
 
-        transform.Translate(velocity);
+        }
 
-	}
+
+
+    }
 
     Vector3 CalculateObjectMovement()
     {
